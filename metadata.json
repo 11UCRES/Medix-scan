@@ -1,0 +1,7 @@
+{
+  "name": "MediScan AI",
+  "description": "AI-powered prescription scanner and bilingual health assistant supporting English and Bangla.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
