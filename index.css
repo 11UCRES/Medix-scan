@@ -1,0 +1,64 @@
+/* Custom scrollbar for chat */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ECG Animation */
+.ecg-svg {
+  overflow: hidden;
+}
+.ecg-path {
+  fill: none;
+  stroke: #0891b2; /* cyan-600 */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: heartbeat 2s linear infinite;
+}
+@keyframes heartbeat {
+  0% { stroke-dashoffset: 200; opacity: 1; }
+  80% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* Anatomical Heart Animation Container */
+.anatomical-heart-container {
+  width: 140px;
+  height: 140px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* Cardiac Cycle Animations */
+.atria-group {
+  transform-origin: 50% 35%;
+  animation: atria-beat 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ventricle-group {
+  transform-origin: 50% 70%;
+  animation: ventricle-beat 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes atria-beat {
+  0% { transform: scale(1); }
+  10% { transform: scale(0.92); } /* Contract */
+  20% { transform: scale(1); }    /* Relax */
+  100% { transform: scale(1); }
+}
+
+@keyframes ventricle-beat {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.05); } /* Fill */
+  30% { transform: scale(0.88); } /* Contract/Pump */
+  50% { transform: scale(1); }    /* Relax */
+  100% { transform: scale(1); }
+}
+
+.flow-particle {
+  opacity: 0.8;
+}
